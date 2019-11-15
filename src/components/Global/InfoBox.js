@@ -6,9 +6,11 @@ import useSiteContext from '../SiteContext';
 const InfoBox = () => {
   const {
     infoBox: { services, servicesListHeading, headingText },
+    home,
+    mobile,
   } = useSiteContext();
 
-  return (
+  return mobile && !home ? null : (
     <StyledInfoBox className="info-box">
       {headingText && <p className="info-box__heading-text">{headingText}</p>}
       {servicesListHeading && (

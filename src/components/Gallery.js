@@ -18,8 +18,8 @@ const Gallery = ({ images }) => {
   return (
     <GalleryStyles>
       <Flickity className="gallery" options={flickityOptions}>
-        {images.map(({ asset: { _key, fixed, alt } }) => (
-          <Image key={_key} fixed={fixed} alt={alt} />
+        {images.map(({ _key, alt, asset }) => (
+          <Image key={_key} fixed={asset.fixed} alt={alt} />
         ))}
       </Flickity>
     </GalleryStyles>

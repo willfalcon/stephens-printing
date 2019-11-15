@@ -1,19 +1,22 @@
 import React from 'react';
 import Image from 'gatsby-image';
+import { Link } from 'gatsby';
 
 import useSiteContext from './SiteContext';
 const SiteLogo = () => {
   const { siteLogo } = useSiteContext();
 
   return (
-    <Image
-      className="site-logo"
-      fixed={siteLogo.asset.fixed}
-      alt="Stephens Printing, LLC"
-      style={{
-        display: 'block',
-      }}
-    />
+    <Link to="/">
+      <Image
+        className="site-logo"
+        fixed={siteLogo.asset.fixed}
+        alt="Stephens Printing, LLC"
+        style={{
+          display: 'block',
+        }}
+      />
+    </Link>
   );
 };
 

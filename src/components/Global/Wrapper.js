@@ -8,10 +8,10 @@ import { SiteContextProvider } from '../SiteContext';
 import InfoBox from './InfoBox';
 import Footer from '../Footer';
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, home = false }) => {
   return (
     <ThemeProvider theme={theme}>
-      <SiteContextProvider>
+      <SiteContextProvider home={home}>
         <PageWrapper>
           <Header />
           <InfoBox />

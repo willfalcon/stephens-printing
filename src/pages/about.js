@@ -4,17 +4,18 @@ import { graphql } from 'gatsby';
 import Wrapper from '../components/Global/Wrapper';
 import Page from '../components/Page';
 
-const index = ({ data }) => {
+const about = ({ data }) => {
   return (
-    <Wrapper home>
-      <Page {...data.sanityHomePage} />
+    <Wrapper>
+      <Page {...data.sanityAboutPage} />
     </Wrapper>
   );
 };
 
-export const HomeQuery = graphql`
-  query homeQuery {
-    sanityHomePage(_id: { eq: "homePage" }) {
+export const AboutQuery = graphql`
+  query aboutQuery {
+    sanityAboutPage(_id: { eq: "aboutPage" }) {
+      title
       images {
         asset {
           fixed(width: 400) {
@@ -24,8 +25,9 @@ export const HomeQuery = graphql`
         alt
         _key
       }
+      _rawContent
     }
   }
 `;
 
-export default index;
+export default about;

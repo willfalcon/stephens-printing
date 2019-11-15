@@ -6,7 +6,7 @@ import theme from './theme';
 
 const SiteContext = React.createContext();
 
-const SiteContextProvider = ({ children }) => {
+const SiteContextProvider = ({ children, home }) => {
   const siteSettings = useStaticQuery(graphql`
     {
       sanitySiteSettings {
@@ -47,6 +47,7 @@ const SiteContextProvider = ({ children }) => {
         ...sanitySiteSettings,
         infoBox,
         mobile: viewport.viewport.width < theme.sizes.break,
+        home,
       }}
     >
       {children}
