@@ -1,13 +1,31 @@
-import React from "react";
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Wrapper from "../components/Wrapper";
+import Wrapper from '../components/Global/Wrapper';
+import Page from '../components/Page';
 
-const index = () => {
+const index = ({ data }) => {
   return (
     <Wrapper>
-      <h1>Hello</h1>
+      <Page {...data.sanityHomePage} />
     </Wrapper>
   );
 };
+
+export const HomeQuery = graphql`
+  query homeQuery {
+    sanityHomePage(_id: { eq: "homePage" }) {
+      images {
+        asset {
+          fixed(width: 400) {
+            ...GatsbySanityImageFixed
+          }
+        }
+        alt
+        _key
+      }
+    }
+  }
+`;
 
 export default index;

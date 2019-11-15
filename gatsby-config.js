@@ -9,11 +9,14 @@ module.exports = {
       options: {
         projectId: `n1mp5vgv`,
         dataset: `production`,
+        watchMode: true,
       },
-    }`gatsby-plugin-styled-components`,
+    },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,7 +30,7 @@ module.exports = {
         name: `stephens-printing`,
         start_url: `/`,
         background_color: `#FFFFFF`,
-        icon: `src/images/favicon.png`,
+        icon: `src/images/favicon.jpg`,
       },
     },
   ],

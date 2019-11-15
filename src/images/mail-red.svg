@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="28px" viewBox="0 0 40 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mail" transform="translate(2.000000, 2.000000)" stroke="#C42D26" stroke-width="3">
+            <g id="Group-9">
+                <path d="M32.3938135,24 L3.60618651,24 C1.61397403,24 0,22.4171944 0,20.4651698 L0,3.53483017 C0,1.5828056 1.61397403,0 3.60618651,0 L32.3938135,0 C34.386026,0 36,1.5828056 36,3.53483017 L36,20.4651698 C36,22.4171944 34.386026,24 32.3938135,24 Z" id="Stroke-1"></path>
+                <path d="M1,1 L15.4781754,14.9819961 C16.8828156,16.3393346 19.1171844,16.3393346 20.5226111,14.9819961 L35,1" id="Stroke-3"></path>
+                <path d="M36,24 L25,12" id="Stroke-5"></path>
+                <path d="M11,12 L1,23" id="Stroke-7"></path>
+            </g>
+        </g>
+    </g>
+</svg>
