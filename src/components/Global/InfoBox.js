@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import useSiteContext from '../SiteContext';
+import { media, contentWidth } from '../theme';
 
 const InfoBox = () => {
   const {
@@ -33,6 +34,7 @@ const StyledInfoBox = styled.div`
   background: white;
   padding: 1rem;
   box-shadow: ${({ theme }) => theme.shadow};
+  ${contentWidth}
   p {
     font-weight: 700;
     font-size: 1.8rem;

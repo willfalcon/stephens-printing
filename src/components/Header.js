@@ -4,21 +4,26 @@ import { rgba } from 'polished';
 
 import SiteLogo from './SiteLogo';
 import useSiteContext from './SiteContext';
+import BGVideo from './BGVideo';
 
 const Header = () => {
-  const { backgroundVideo, mobile, viewport } = useSiteContext();
+  const { mobile, viewport } = useSiteContext();
   const headerHeight = 250;
   return (
     <>
       {mobile && (
         <MobileHeader headerHeight={headerHeight} className="mobile-header">
-          <div className="header-background">
-            <video height={headerHeight}>
-              <source src={backgroundVideo.asset.url} type="video/mp4" />
-            </video>
-          </div>
+          <BGVideo className="header-background" height={headerHeight} />
           <SiteLogo />
         </MobileHeader>
+      )}
+      {!mobile && (
+        <>
+          <BGVideo className="background-video" height={viewport.height} />
+          <MobileHeader headerHeight={headerHeight} className="header">
+            <SiteLogo />
+          </MobileHeader>
+        </>
       )}
     </>
   );
@@ -28,16 +33,8 @@ const MobileHeader = styled.div`
   padding-top: 2rem;
   padding-bottom: 3rem;
   position: relative;
-  height: 250px;
+  height: ${({ headerHeight }) => headerHeight}px;
   .header-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    video {
-      object-fit: cover;
-    }
     ::after {
       content: '';
       position: absolute;
