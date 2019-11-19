@@ -36,6 +36,7 @@ const MobileHeader = styled.div`
   padding-bottom: 3rem;
   position: relative;
   height: ${({ headerHeight }) => headerHeight}px;
+  overflow: hidden;
   .header-background {
     ::after {
       content: '';

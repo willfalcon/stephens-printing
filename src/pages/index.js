@@ -5,11 +5,7 @@ import Wrapper from '../components/Wrapper';
 import Page from '../components/Page';
 
 const index = ({ data }) => {
-  return (
-    <Wrapper home>
-      <Page {...data.sanityHomePage} />
-    </Wrapper>
-  );
+  return <Page {...data.sanityHomePage} />;
 };
 
 export const HomeQuery = graphql`

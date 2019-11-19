@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import TransitionLink from 'gatsby-plugin-transition-link';
 import classNames from 'classnames';
 
-const Nav = ({ classNames }) => {
+const Nav = ({ className }) => {
   return (
-    <MainNav className="main-nav">
+    <MainNav className={classNames('main-nav', className)}>
       <ul className="main-nav__list">
         <li className="main-nav__list-item">
           <Link activeClassName="current" to="/">
