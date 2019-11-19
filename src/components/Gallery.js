@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Flickity from 'react-flickity-component';
 import Image from 'gatsby-image';
 
+import { contentWidth, media } from './theme';
+
 const flickityOptions = {
   arrowShape: {
     x0: 25,
@@ -29,6 +31,11 @@ const Gallery = ({ images }) => {
 const GalleryStyles = styled.div`
   width: 400px;
   max-width: 100%;
+
+  ${media.break`
+    margin: 3rem auto;
+  `}
+
   .flickity-prev-next-button {
     background: black;
     border-radius: 0;

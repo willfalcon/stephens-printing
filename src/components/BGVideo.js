@@ -10,7 +10,12 @@ const BGVideo = ({ height, className }) => {
 
   return (
     <BackgroundVideoContainer className={classNames(className)}>
-      <video height={height}>
+      <video
+        height={height}
+        onCanPlay={e => {
+          // e.target.play();
+        }}
+      >
         <source src={backgroundVideo.asset.url} type="video/mp4" />
       </video>
     </BackgroundVideoContainer>

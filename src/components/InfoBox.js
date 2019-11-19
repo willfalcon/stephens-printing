@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import useSiteContext from '../SiteContext';
-import { media, contentWidth } from '../theme';
+import useSiteContext from './SiteContext';
+import ButtonMenu from './ButtonMenu';
+import { media, contentWidth } from './theme';
 
 const InfoBox = () => {
   const {
@@ -26,6 +27,7 @@ const InfoBox = () => {
           ))}
         </ServicesList>
       )}
+      {!mobile && <ButtonMenu className="info-box-nav" />}
     </StyledInfoBox>
   );
 };

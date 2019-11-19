@@ -1,28 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import classNames from 'classnames';
 
-const ButtonMenu = () => {
+const ButtonMenu = ({ className }) => {
   return (
-    <StyledButtonMenu className="button-menu">
-      <li className="button-menu__item">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="button-menu__item">
-        <Link to="/about">About</Link>
-      </li>
-      <li className="button-menu__item red-bg">
-        <Link to="/quote">Request a Quote</Link>
-      </li>
+    <StyledButtonMenu className={classNames('button-menu', className)}>
+      <ul className="button-menu__list">
+        <li className="button-menu__item">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="button-menu__item">
+          <Link to="/about">About</Link>
+        </li>
+        <li className="button-menu__item red-bg">
+          <Link to="/quote">Request a Quote</Link>
+        </li>
+      </ul>
     </StyledButtonMenu>
   );
 };
 
-const StyledButtonMenu = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+const StyledButtonMenu = styled.nav`
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
   li {
     background: ${({ theme }) => theme.dark};
     border-left: 1px solid white;

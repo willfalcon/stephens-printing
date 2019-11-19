@@ -5,6 +5,7 @@ import { rgba } from 'polished';
 import SiteLogo from './SiteLogo';
 import useSiteContext from './SiteContext';
 import BGVideo from './BGVideo';
+import Nav from './Nav';
 
 const Header = () => {
   const { mobile, viewport } = useSiteContext();
@@ -23,6 +24,7 @@ const Header = () => {
           <MobileHeader headerHeight={headerHeight} className="header">
             <SiteLogo />
           </MobileHeader>
+          <Nav />
         </>
       )}
     </>

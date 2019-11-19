@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Wrapper from '../components/Global/Wrapper';
+import Wrapper from '../components/Wrapper';
 import Page from '../components/Page';
 
 const index = ({ data }) => {

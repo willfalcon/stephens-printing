@@ -32,4 +32,14 @@ const getViewport = () => {
   };
 };
 
-export { useViewport, getViewport };
+function formatPhone(num) {
+  const area = num.slice(0, 3);
+  const first = num.slice(3, 6);
+  const last = num.slice(6, 10);
+  return {
+    href: `(${area}) ${first}-${last}`,
+    display: `${area}-${first}-${last}`,
+  };
+}
+
+export { useViewport, getViewport, formatPhone };

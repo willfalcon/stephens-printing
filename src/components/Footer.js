@@ -9,8 +9,8 @@ const Footer = () => {
   const { mobile } = useSiteContext();
 
   return (
-    <StyledFooter>
-      {mobile && <ButtonMenu />}
+    <StyledFooter className="footer">
+      {mobile && <ButtonMenu className="mobile-footer-nav" />}
       <Contact />
     </StyledFooter>
   );

@@ -4,6 +4,9 @@ const theme = {
   font: {
     family: 'museo-sans,sans-serif',
     scriptFamily: 'voltage, sans-serif',
+    regular: 300,
+    demibold: 500,
+    bold: 700,
   },
   red: '#C72800',
   dark: '#4A4A4A',
@@ -31,6 +34,10 @@ const contentWidth = css`
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  ${theme.grid &&
+    media.break`
+    width: 500px;
+  `}
 `;
 
 export { media, contentWidth };
