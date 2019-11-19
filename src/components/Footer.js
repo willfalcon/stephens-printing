@@ -5,6 +5,8 @@ import useSiteContext from './SiteContext';
 import ButtonMenu from './ButtonMenu';
 import Contact from './Contact';
 
+import { media } from './theme';
+
 const Footer = () => {
   const { mobile } = useSiteContext();
 
@@ -16,6 +18,17 @@ const Footer = () => {
   );
 };
 
-const StyledFooter = styled.footer``;
+const StyledFooter = styled.footer`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 10;
+  ${media.break`
+    position: static;
+    background: transparent;
+  `}
+`;
 
 export default Footer;

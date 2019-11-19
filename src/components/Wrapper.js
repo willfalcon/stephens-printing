@@ -19,7 +19,7 @@ const Wrapper = ({ children, home = false }) => {
         <PageWrapper viewHeight={height}>
           <Header />
           <InfoBox />
-          {children}
+          <div className="page-container">{children}</div>
           <Footer />
           <GlobalStyle />
         </PageWrapper>
@@ -29,10 +29,12 @@ const Wrapper = ({ children, home = false }) => {
 };
 
 const PageWrapper = styled.div`
+  margin-bottom: 10rem;
   ${media.break`
     max-height: ${({ viewHeight }) => viewHeight}px;
     height: ${({ viewHeight }) => viewHeight}px;
     overflow: scroll;
+    margin-bottom: 0;
     ::before {
       content: '';
       position: absolute;

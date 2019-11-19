@@ -5,11 +5,7 @@ import Wrapper from '../components/Wrapper';
 import Page from '../components/Page';
 
 const about = ({ data }) => {
-  return (
-    <Wrapper>
-      <Page {...data.sanityAboutPage} />
-    </Wrapper>
-  );
+  return <Page {...data.sanityAboutPage} />;
 };
 
 export const AboutQuery = graphql`
