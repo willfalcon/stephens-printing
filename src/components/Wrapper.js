@@ -59,7 +59,7 @@ const PageWrapper = styled.div`
       ". logo   pagecontent ."
       ". info   pagecontent ."
       ". info   pagecontent ."
-      ". footer pagecontent .";
+      ". footer     .       .";
     justify-content: center;
     .header {
       grid-area: logo;
@@ -72,6 +72,9 @@ const PageWrapper = styled.div`
     }
     .page-container {
       grid-area: pagecontent;
+      max-height: 100%;
+      overflow: scroll;
+      box-shadow: ${({ theme }) => theme.shadow};
     }
     .footer {
       grid-area: footer;
