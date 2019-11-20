@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import useSiteContext from './SiteContext';
 import ButtonMenu from './ButtonMenu';
-import { media, contentWidth } from './theme';
+import { contentWidth } from './theme';
 
 const InfoBox = () => {
   const {

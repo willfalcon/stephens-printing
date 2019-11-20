@@ -13,8 +13,12 @@ const BGVideo = ({ height, className }) => {
       <video
         height={height}
         onCanPlay={e => {
-          // e.target.play();
+          const video = e.target;
+          video.playbackRate = 0.75;
+          // video.play();
         }}
+        loop
+        // autoPlay
       >
         <source src={backgroundVideo.asset.url} type="video/mp4" />
       </video>
@@ -30,6 +34,7 @@ const BackgroundVideoContainer = styled.div`
   left: 0;
   video {
     object-fit: cover;
+    width: 100%;
   }
   ${media.break`
     z-index: -2;

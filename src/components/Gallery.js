@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Flickity from 'react-flickity-component';
 import Image from 'gatsby-image';
 
-import { contentWidth, media } from './theme';
+import { media } from './theme';
 
 const flickityOptions = {
   arrowShape: {

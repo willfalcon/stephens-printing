@@ -53,6 +53,7 @@ const PageWrapper = styled.div`
     display: grid;
     grid-template-columns: 4rem 5fr 4fr 4rem;
     grid-template-rows: auto auto auto auto auto 1fr auto;
+    grid-column-gap: 2rem;
     grid-template-areas:
       ". logo     mainnav   ."
       ". logo   pagecontent ."
