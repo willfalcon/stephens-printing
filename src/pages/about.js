@@ -3,9 +3,7 @@ import { graphql } from 'gatsby';
 
 import Page from '../components/Page';
 
-const about = ({ data }) => {
-  return <Page {...data.sanityAboutPage} />;
-};
+const about = ({ data }) => <Page {...data.sanityAboutPage} />;
 
 export const AboutQuery = graphql`
   query aboutQuery {

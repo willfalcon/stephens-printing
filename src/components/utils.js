@@ -21,4 +21,10 @@ function formatPhone(num) {
   };
 }
 
-export { getViewport, formatPhone };
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
+export { getViewport, formatPhone, encode };

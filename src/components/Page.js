@@ -5,9 +5,10 @@ import { useTransition, animated } from 'react-spring';
 
 import Gallery from './Gallery';
 import Content from './Content';
+import QuoteForm from './QuoteForm/QuoteForm';
 import { media } from './theme';
 
-const Page = ({ images, title, _rawContent }) => {
+const Page = ({ images = [], title, _rawContent, formBuilder }) => {
   return (
     <>
       <TransitionState>
@@ -15,10 +16,13 @@ const Page = ({ images, title, _rawContent }) => {
           <Transitioner {...stateProps}>
             <PageContainer className="page-container">
               {images.length > 0 && <Gallery images={images} />}
-              {(title || _rawContent) && (
+              {(title || _rawContent || formBuilder) && (
                 <PageContent>
                   {title && <h1>{title}</h1>}
                   {_rawContent && <Content>{_rawContent}</Content>}
+                  {formBuilder && formBuilder.length && (
+                    <QuoteForm fields={formBuilder} />
+                  )}
                 </PageContent>
               )}
             </PageContainer>
@@ -61,6 +65,8 @@ const PageContent = styled.div`
   ${media.break`
     background: white;
     padding: .5rem 2.5rem 2.5rem;
+    max-height: 100%;
+    overflow: scroll;
     h1 {
       margin-top: 1rem;
     }
