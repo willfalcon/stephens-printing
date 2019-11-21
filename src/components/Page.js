@@ -14,7 +14,7 @@ const Page = ({ images = [], title, _rawContent, formBuilder }) => {
       <TransitionState>
         {stateProps => (
           <Transitioner {...stateProps}>
-            <PageContainer className="page-container">
+            <PageContainer>
               {images.length > 0 && <Gallery images={images} />}
               {(title || _rawContent || formBuilder) && (
                 <PageContent>
