@@ -31,8 +31,10 @@ const Wrapper = ({ children, home = false }) => {
 const PageWrapper = styled.div`
   margin-bottom: 10rem;
   ${media.break`
-    max-height: ${({ viewHeight }) => viewHeight}px;
-    height: ${({ viewHeight }) => viewHeight}px;
+    max-height: ${({ viewHeight }) =>
+      viewHeight > 0 ? `${viewHeight}px` : '100vh'};
+    height: ${({ viewHeight }) =>
+      viewHeight > 0 ? `${viewHeight}px` : '100vh'};
     overflow: scroll;
     margin-bottom: 0;
     ::before {
