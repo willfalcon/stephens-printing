@@ -41,8 +41,6 @@ const SiteContextProvider = ({ children, home }) => {
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
   const [ready, makeReady] = useState(false);
 
-  const viewWidth = getViewport().width;
-
   useEffect(() => {
     function updateViewport() {
       makeReady(false);
@@ -52,7 +50,7 @@ const SiteContextProvider = ({ children, home }) => {
     updateViewport();
     window.addEventListener('resize', updateViewport);
     return () => window.removeEventListener('resize', updateViewport);
-  }, [viewWidth]);
+  }, []);
 
   return (
     <SiteContext.Provider
