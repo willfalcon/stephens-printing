@@ -44,7 +44,9 @@ const Transitioner = ({ transitionStatus, children }) => {
       enter: {
         opacity: 1,
       },
-      leave: { opacity: 1 },
+      leave: {
+        opacity: 1,
+      },
     }
   );
 
@@ -66,7 +68,8 @@ const PageContent = styled.div`
     background: white;
     padding: .5rem 2.5rem 2.5rem;
     max-height: 100%;
-    overflow: scroll;
+    box-shadow: ${({ theme }) => theme.shadow};
+
     h1 {
       margin-top: 1rem;
     }

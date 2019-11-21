@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop"
+    "dev": "gatsby develop",
+    "build-dev": "gatsby build --prefix-paths"
   },
   "author": "",
   "license": "ISC",

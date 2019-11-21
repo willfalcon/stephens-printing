@@ -12,7 +12,7 @@ const InfoBox = () => {
     mobile,
   } = useSiteContext();
 
-  return mobile && !home ? null : (
+  return !mobile || home ? (
     <StyledInfoBox className="info-box">
       {headingText && <p className="info-box__heading-text">{headingText}</p>}
       {servicesListHeading && (
@@ -29,7 +29,7 @@ const InfoBox = () => {
       )}
       {!mobile && <ButtonMenu className="info-box-nav" />}
     </StyledInfoBox>
-  );
+  ) : null;
 };
 
 const StyledInfoBox = styled.div`

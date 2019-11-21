@@ -76,7 +76,6 @@ const PageWrapper = styled.div`
       grid-area: pagecontent;
       max-height: 100%;
       overflow: scroll;
-      box-shadow: ${({ theme }) => theme.shadow};
     }
     .footer {
       grid-area: footer;

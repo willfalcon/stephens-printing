@@ -9,10 +9,10 @@ import TextArea from './TextArea';
 import { encode } from '../utils';
 
 const QuoteForm = ({ fields }) => {
-  console.log(fields);
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = async data => {
     console.log(data);
+    console.log(errors);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -21,7 +21,6 @@ const QuoteForm = ({ fields }) => {
       .then(res => console.log(res))
       .catch(error => console.error(error));
   };
-  console.log(errors);
   return (
     <Form
       className="quote-form"
