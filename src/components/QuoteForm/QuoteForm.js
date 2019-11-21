@@ -6,13 +6,30 @@ import TextField from './TextField';
 import RadioButtons from './RadioButtons';
 import TextArea from './TextArea';
 
+import { encode } from '../utils';
+
 const QuoteForm = ({ fields }) => {
   console.log(fields);
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = async data => {
+    console.log(data);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'quote-form', ...data }),
+    })
+      .then(res => console.log(res))
+      .catch(error => console.error(error));
+  };
   console.log(errors);
   return (
-    <Form className="quote-form" onSubmit={handleSubmit(onSubmit)}>
+    <Form
+      className="quote-form"
+      onSubmit={handleSubmit(onSubmit)}
+      name="quote-form"
+      data-netlify="true"
+    >
+      <input type="hidden" name="form-name" value="quote-form" />
       {fields.map(field => {
         if (field._type === 'textField')
           return <TextField {...field} key={field._key} register={register} />;
