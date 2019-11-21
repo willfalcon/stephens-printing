@@ -19,7 +19,7 @@ const Wrapper = ({ children, home = false }) => {
         <PageWrapper viewHeight={height}>
           <Header />
           <InfoBox />
-          <div className="page-container">{children}</div>
+          <PageMain className="page-container">{children}</PageMain>
           <Footer />
           <GlobalStyle />
         </PageWrapper>
@@ -27,6 +27,8 @@ const Wrapper = ({ children, home = false }) => {
     </ThemeProvider>
   );
 };
+
+const PageMain = styled.main``;
 
 const PageWrapper = styled.div`
   margin-bottom: 10rem;

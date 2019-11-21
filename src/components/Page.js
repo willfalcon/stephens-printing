@@ -14,7 +14,7 @@ const Page = ({ images = [], title, _rawContent, formBuilder }) => {
       <TransitionState>
         {stateProps => (
           <Transitioner {...stateProps}>
-            <PageContainer>
+            <>
               {images.length > 0 && <Gallery images={images} />}
               {(title || _rawContent || formBuilder) && (
                 <PageContent>
@@ -25,7 +25,7 @@ const Page = ({ images = [], title, _rawContent, formBuilder }) => {
                   )}
                 </PageContent>
               )}
-            </PageContainer>
+            </>
           </Transitioner>
         )}
       </TransitionState>
@@ -75,6 +75,5 @@ const PageContent = styled.div`
     }
   `}
 `;
-const PageContainer = styled.main``;
 
 export default Page;
