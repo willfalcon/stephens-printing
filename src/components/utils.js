@@ -1,5 +1,5 @@
 const getViewport = () => {
-  if (window == 'undefined') {
+  if (typeof window === 'undefined') {
     return { width: 0, height: 0 };
   }
   var e = window,
