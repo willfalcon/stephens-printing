@@ -17,6 +17,7 @@ const SiteContextProvider = ({ children, home }) => {
               ...GatsbySanityImageFixed
             }
           }
+          alt
         }
         contactInfo {
           email
@@ -68,9 +69,7 @@ const SiteContextProvider = ({ children, home }) => {
   );
 };
 
-const useSiteContext = () => {
-  return useContext(SiteContext);
-};
+const useSiteContext = () => useContext(SiteContext);
 
 export { SiteContextProvider, SiteContext };
 export default useSiteContext;

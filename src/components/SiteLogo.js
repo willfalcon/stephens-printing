@@ -11,7 +11,7 @@ const SiteLogo = () => {
       <Image
         className="site-logo"
         fixed={siteLogo.asset.fixed}
-        alt="Stephens Printing, LLC"
+        alt={siteLogo.alt}
         style={{
           display: 'block',
         }}
