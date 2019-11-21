@@ -1,4 +1,7 @@
 const getViewport = () => {
+  if (window == 'undefined') {
+    return { width: 0, height: 0 };
+  }
   var e = window,
     a = 'inner';
   if (!('innerWidth' in window)) {
