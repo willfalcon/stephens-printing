@@ -3,26 +3,25 @@ import styled from 'styled-components';
 import camelCase from 'camelcase';
 
 import { StyledLabel } from './QuoteForm';
+import ErrorMessage from './ErrorMessage';
 
-const RadioButtons = ({ name, options, register, fieldOptions }) => {
+const RadioButtons = ({ name, options, register, fieldOptions, error }) => {
   const [checked, setChecked] = useState(null);
-
+  const required = fieldOptions && fieldOptions.required ? fieldOptions.required : false;
+const halfWidth = fieldOptions && fieldOptions.halfWidth ? fieldOptions.halfWidth : false;
   return (
     <StyledLabel
       className="field-label radio-buttons"
       htmlFor={camelCase(name)}
-      halfWidth={
-        fieldOptions && fieldOptions.halfWidth ? fieldOptions.halfWidth : false
-      }
+      halfWidth={halfWidth}
     >
-      <span className="label-text">{name}</span>
+      <span className="label-text">
+        {name}
+        {required && "*"}
+      </span>
       <RadioButtonsContainer
         className="radio-buttons-container"
-        halfWidth={
-          fieldOptions && fieldOptions.halfWidth
-            ? fieldOptions.halfWidth
-            : false
-        }
+        halfWidth={halfWidth}
       >
         {options.map((option, i) => (
           <span
@@ -38,16 +37,14 @@ const RadioButtons = ({ name, options, register, fieldOptions }) => {
               name={camelCase(name)}
               value={camelCase(option)}
               ref={register({
-                required:
-                  fieldOptions && fieldOptions.required
-                    ? fieldOptions.required
-                    : false,
+                required
               })}
             />
             <span className="radio-button-option-label">{option}</span>
           </span>
         ))}
       </RadioButtonsContainer>
+      {error && <ErrorMessage error={error} />}
     </StyledLabel>
   );
 };

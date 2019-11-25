@@ -18,7 +18,7 @@ const BGVideo = ({ height, className }) => {
           // video.play();
         }}
         loop
-        autoPlay
+        // autoPlay
       >
         <source src={backgroundVideo.asset.url} type="video/mp4" />
       </video>

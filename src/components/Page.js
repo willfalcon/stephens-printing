@@ -8,7 +8,7 @@ import Content from './Content';
 import QuoteForm from './QuoteForm/QuoteForm';
 import { media } from './theme';
 
-const Page = ({ images = [], title, _rawContent, formBuilder }) => {
+const Page = ({ images = [], title, _rawContent, formBuilder, successMessage }) => {
   return (
     <>
       <TransitionState>
@@ -21,7 +21,7 @@ const Page = ({ images = [], title, _rawContent, formBuilder }) => {
                   {title && <h1>{title}</h1>}
                   {_rawContent && <Content>{_rawContent}</Content>}
                   {formBuilder && formBuilder.length && (
-                    <QuoteForm fields={formBuilder} />
+                    <QuoteForm fields={formBuilder} successMessage={successMessage} />
                   )}
                 </PageContent>
               )}

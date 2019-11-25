@@ -49,6 +49,7 @@ export const QuoteQuery = graphql`
           }
         }
       }
+      successMessage
     }
   }
 `;
