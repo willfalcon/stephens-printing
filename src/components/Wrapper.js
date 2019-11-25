@@ -56,15 +56,16 @@ const PageWrapper = styled.div`
     overflow: hidden;
     display: grid;
     grid-template-columns: 4rem 5fr 4fr 4rem;
-    grid-template-rows: auto auto auto auto auto 1fr auto;
+    grid-template-rows: auto auto auto 1fr;
     grid-column-gap: 2rem;
     grid-template-areas:
-      ". logo     mainnav   ."
-      ". logo   pagecontent ."
-      ". info   pagecontent ."
-      ". info   pagecontent ."
-      ". footer     .       .";
+      ".  logo      mainnav   ."
+      ".  logo    pagecontent ."
+      ".  info    pagecontent ."
+      ". footer   pagecontent .";
     justify-content: center;
+    align-items: start;
+    padding-bottom: 3rem;
     .header {
       grid-area: logo;
     }
