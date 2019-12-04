@@ -6,6 +6,7 @@ import SiteLogo from './SiteLogo';
 import useSiteContext from './SiteContext';
 import BGVideo from './BGVideo';
 import Nav from './Nav';
+import VideoControls from './VideoControls';
 
 const Header = () => {
   const { mobile, viewport } = useSiteContext();
@@ -25,6 +26,7 @@ const Header = () => {
             <SiteLogo />
           </MobileHeader>
           <Nav />
+          <VideoControls />
         </>
       )}
     </>

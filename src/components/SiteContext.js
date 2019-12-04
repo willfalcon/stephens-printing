@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { getViewport } from './utils';
+import { getViewport, isPlaying } from './utils';
 import theme from './theme';
 
 const SiteContext = React.createContext();
@@ -41,6 +41,7 @@ const SiteContextProvider = ({ children, home }) => {
 
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
   const [ready, makeReady] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(true);
 
   useEffect(() => {
     function updateViewport() {
@@ -53,6 +54,18 @@ const SiteContextProvider = ({ children, home }) => {
     return () => window.removeEventListener('resize', updateViewport);
   }, []);
 
+  const videoRef = useRef(null);
+
+  const pauseVideo = () => {
+    videoRef.current.pause();
+    setVideoPlaying(false);
+  }
+
+  const playVideo = () => {
+    videoRef.current.play();
+    setVideoPlaying(true);
+  }
+
   return (
     <SiteContext.Provider
       value={{
@@ -62,6 +75,10 @@ const SiteContextProvider = ({ children, home }) => {
         mobile: viewport.width < theme.sizes.break,
         home,
         ready: ready,
+        videoRef,
+        pauseVideo,
+        playVideo,
+        videoPlaying
       }}
     >
       {children}

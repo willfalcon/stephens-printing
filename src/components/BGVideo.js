@@ -6,7 +6,7 @@ import useSiteContext from './SiteContext';
 import { media } from './theme';
 
 const BGVideo = ({ height, className }) => {
-  const { backgroundVideo } = useSiteContext();
+  const { backgroundVideo, videoRef } = useSiteContext();
 
   return (
     <BackgroundVideoContainer className={classNames(className)}>
@@ -19,12 +19,16 @@ const BGVideo = ({ height, className }) => {
         // }}
         loop
         autoPlay
+        ref={videoRef}
       >
         <source src={backgroundVideo.asset.url} type="video/mp4" />
       </video>
     </BackgroundVideoContainer>
   );
 };
+
+
+
 
 const BackgroundVideoContainer = styled.div`
   position: absolute;

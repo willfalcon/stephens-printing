@@ -30,4 +30,6 @@ const encode = data => {
     .join('&');
 };
 
-export { getViewport, formatPhone, encode };
+const isPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+
+export { getViewport, formatPhone, encode, isPlaying };
