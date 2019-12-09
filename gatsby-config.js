@@ -10,7 +10,7 @@ module.exports = {
       options: {
         projectId: `n1mp5vgv`,
         dataset: `production`,
-        watchMode: true,
+       // watchMode: true,
       },
     },
     `gatsby-plugin-styled-components`,
