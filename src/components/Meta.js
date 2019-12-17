@@ -24,8 +24,6 @@ const Meta = ({ pageTitle, metaDescription, title, url }) => {
 
   const titleTag = pageTitle ? pageTitle : title;
 
-  console.log({ siteProps, pageTitle, title, siteTitle, titleTag, home });
-
   return (
     <Helmet
       htmlAttributes={{
