@@ -19,6 +19,10 @@ export const QuoteQuery = graphql`
         _key
       }
       _rawContent
+      seoSettings {
+        metaDescription
+        pageTitle
+      }
       formBuilder {
         ... on SanityRadioButtons {
           _key
