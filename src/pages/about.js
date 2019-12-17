@@ -19,6 +19,10 @@ export const AboutQuery = graphql`
         _key
       }
       _rawContent
+      seoSettings {
+        metaDescription
+        pageTitle
+      }
     }
   }
 `;

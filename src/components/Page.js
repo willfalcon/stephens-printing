@@ -8,7 +8,13 @@ import Content from './Content';
 import QuoteForm from './QuoteForm/QuoteForm';
 import { media } from './theme';
 
-const Page = ({ images = [], title, _rawContent, formBuilder, successMessage }) => {
+const Page = ({
+  images = [],
+  title,
+  _rawContent,
+  formBuilder,
+  successMessage
+}) => {
   return (
     <>
       <TransitionState>
@@ -21,7 +27,10 @@ const Page = ({ images = [], title, _rawContent, formBuilder, successMessage }) 
                   {title && <h1>{title}</h1>}
                   {_rawContent && <Content>{_rawContent}</Content>}
                   {formBuilder && formBuilder.length && (
-                    <QuoteForm fields={formBuilder} successMessage={successMessage} />
+                    <QuoteForm
+                      fields={formBuilder}
+                      successMessage={successMessage}
+                    />
                   )}
                 </PageContent>
               )}
@@ -39,14 +48,14 @@ const Transitioner = ({ transitionStatus, children }) => {
     null,
     {
       from: {
-        opacity: 0,
+        opacity: 0
       },
       enter: {
-        opacity: 1,
+        opacity: 1
       },
       leave: {
-        opacity: 1,
-      },
+        opacity: 1
+      }
     }
   );
 

@@ -8,15 +8,17 @@ import Header from './Header';
 import { SiteContextProvider } from './SiteContext';
 import InfoBox from './InfoBox';
 import Footer from './Footer';
+import Meta from './Meta';
 
 import { getViewport } from './utils';
 
-const Wrapper = ({ children, home = false }) => {
+const Wrapper = ({ children, home = false, seo, title, url }) => {
   const { height } = getViewport();
   return (
     <ThemeProvider theme={theme}>
       <SiteContextProvider home={home}>
         <PageWrapper viewHeight={height}>
+          <Meta {...seo} title={title} url={url} />
           <Header />
           <InfoBox />
           <PageMain className="page-container">{children}</PageMain>

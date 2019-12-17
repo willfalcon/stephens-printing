@@ -59,12 +59,12 @@ const SiteContextProvider = ({ children, home }) => {
   const pauseVideo = () => {
     videoRef.current.pause();
     setVideoPlaying(false);
-  }
+  };
 
   const playVideo = () => {
     videoRef.current.play();
     setVideoPlaying(true);
-  }
+  };
 
   return (
     <SiteContext.Provider
