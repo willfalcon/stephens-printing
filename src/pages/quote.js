@@ -34,6 +34,16 @@ export const QuoteQuery = graphql`
             required
           }
         }
+        ... on SanityCheckBoxes {
+          _key
+          _type
+          name
+          options
+          fieldOptions {
+            halfWidth
+            required
+          }
+        }
         ... on SanityTextArea {
           _key
           _type
@@ -51,6 +61,15 @@ export const QuoteQuery = graphql`
             halfWidth
             required
           }
+        }
+        ... on SanityEmailField {
+          _key
+          _type
+          fieldOptions {
+            halfWidth
+            required
+          }
+          name
         }
       }
       successMessage

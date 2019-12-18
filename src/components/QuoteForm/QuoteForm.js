@@ -5,12 +5,13 @@ import camelCase from 'camelcase';
 
 import TextField from './TextField';
 import RadioButtons from './RadioButtons';
+import CheckBoxes from './CheckBoxes';
 import TextArea from './TextArea';
 
 import { encode } from '../utils';
 
 const QuoteForm = ({ fields, successMessage }) => {
-
+  console.log(fields);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -25,7 +26,7 @@ const QuoteForm = ({ fields, successMessage }) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'quote-form', ...data }),
+      body: encode({ 'form-name': 'quote-form', ...data })
     })
       .then(res => {
         console.log(res);
@@ -51,11 +52,27 @@ const QuoteForm = ({ fields, successMessage }) => {
       <input type="hidden" name="form-name" value="quote-form" />
       <fieldset disabled={loading}>
         {fields.map(field => {
-          if (field._type === 'textField')
-            return <TextField {...field} key={field._key} register={register} error={errors[camelCase(field.name)]} />;
+          if (field._type === 'textField' || field._type === 'emailField')
+            return (
+              <TextField
+                {...field}
+                key={field._key}
+                register={register}
+                error={errors[camelCase(field.name)]}
+              />
+            );
           if (field._type === 'radioButtons')
             return (
               <RadioButtons
+                {...field}
+                key={field._key}
+                register={register}
+                error={errors[camelCase(field.name)]}
+              />
+            );
+          if (field._type === 'checkBoxes')
+            return (
+              <CheckBoxes
                 {...field}
                 key={field._key}
                 register={register}
@@ -77,12 +94,9 @@ const QuoteForm = ({ fields, successMessage }) => {
       </fieldset>
     </Form>
   );
-  
 };
 
-const SuccessMessage = styled.p`
-  
-`;
+const SuccessMessage = styled.p``;
 
 const Form = styled.form`
   display: flex;
