@@ -55,35 +55,37 @@ const PageWrapper = styled.div`
   ${({ theme }) =>
     theme.grid &&
     media.break`
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 4rem 5fr 4fr 4rem;
-    grid-template-rows: auto auto auto 1fr;
-    grid-column-gap: 2rem;
-    grid-template-areas:
-      ".  logo      mainnav   ."
-      ".  logo    pagecontent ."
-      ".  info    pagecontent ."
-      ". footer   pagecontent .";
-    justify-content: center;
-    align-items: start;
-    padding-bottom: 3rem;
-    .header {
-      grid-area: logo;
-    }
-    .main-nav {
-      grid-area: mainnav;
-    }
-    .info-box {
-      grid-area: info;
-    }
-    .page-container {
-      grid-area: pagecontent;
-      max-height: 100%;
-      overflow: scroll;
-    }
-    .footer {
-      grid-area: footer;
+    @supports (display: grid) {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 4rem 5fr 4fr 4rem;
+      grid-template-rows: auto auto auto 1fr;
+      grid-column-gap: 2rem;
+      grid-template-areas:
+        ".  logo      mainnav   ."
+        ".  logo    pagecontent ."
+        ".  info    pagecontent ."
+        ". footer   pagecontent .";
+      justify-content: center;
+      align-items: start;
+      padding-bottom: 3rem;
+      .header {
+        grid-area: logo;
+      }
+      .main-nav {
+        grid-area: mainnav;
+      }
+      .info-box {
+        grid-area: info;
+      }
+      .page-container {
+        grid-area: pagecontent;
+        max-height: 100%;
+        overflow: scroll;
+      }
+      .footer {
+        grid-area: footer;
+      }
     }
   `}
 `;
