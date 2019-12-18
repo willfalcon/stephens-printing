@@ -48,6 +48,7 @@ const QuoteForm = ({ fields, successMessage }) => {
       onSubmit={handleSubmit(onSubmit)}
       name="quote-form"
       data-netlify="true"
+      netlify-honeypot="honeypotField"
     >
       <input type="hidden" name="form-name" value="quote-form" />
       <fieldset disabled={loading}>
@@ -90,6 +91,9 @@ const QuoteForm = ({ fields, successMessage }) => {
             );
           return null;
         })}
+        <label class="honeypot">
+          Don't fill this out if you're human: <input name="honeypotField" />
+        </label>
         <Submit type="submit" />
       </fieldset>
     </Form>
@@ -105,6 +109,9 @@ const Form = styled.form`
     padding: 0;
     margin: 0;
     border: 0;
+  }
+  .honeypot {
+    display: none;
   }
 `;
 
