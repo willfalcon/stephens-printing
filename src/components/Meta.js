@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import useSiteContext from './SiteContext';
@@ -23,8 +23,6 @@ const Meta = ({ pageTitle, metaDescription, title, url }) => {
   } = siteProps;
 
   const titleTag = pageTitle ? pageTitle : title;
-
-  console.log({ siteProps, pageTitle, title, siteTitle, titleTag, home });
 
   return (
     <Helmet

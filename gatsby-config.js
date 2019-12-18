@@ -3,7 +3,7 @@ module.exports = {
     title: `Stephens Printing`,
     description: `Trust us to always deliver the right product, the right service at the right price.`
   },
-  pathPrefix: 'stephens-printing.dev/gatsby/public/',
+  pathPrefix: 'stephensprinting/gatsby/public/',
   plugins: [
     {
       resolve: `gatsby-source-sanity`,
@@ -13,8 +13,8 @@ module.exports = {
         watchMode: true
       }
     },
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,

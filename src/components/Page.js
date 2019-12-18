@@ -13,7 +13,8 @@ const Page = ({
   title,
   _rawContent,
   formBuilder,
-  successMessage
+  successMessage,
+  home = false
 }) => {
   return (
     <>
@@ -22,18 +23,23 @@ const Page = ({
           <Transitioner {...stateProps}>
             <>
               {images.length > 0 && <Gallery images={images} />}
-              {(title || _rawContent || formBuilder) && (
-                <PageContent>
-                  {title && <h1>{title}</h1>}
-                  {_rawContent && <Content>{_rawContent}</Content>}
-                  {formBuilder && formBuilder.length && (
-                    <QuoteForm
-                      fields={formBuilder}
-                      successMessage={successMessage}
-                    />
-                  )}
-                </PageContent>
-              )}
+              {home ? (
+                (title && _rawContent) || _rawContent || formBuilder ? (
+                  <ContentBlock
+                    title={title}
+                    content={_rawContent}
+                    formBuilder={formBuilder}
+                    successMessage={successMessage}
+                  />
+                ) : null
+              ) : title || _rawContent || formBuilder ? (
+                <ContentBlock
+                  title={title}
+                  content={_rawContent}
+                  formBuilder={formBuilder}
+                  successMessage={successMessage}
+                />
+              ) : null}
             </>
           </Transitioner>
         )}
@@ -41,6 +47,16 @@ const Page = ({
     </>
   );
 };
+
+const ContentBlock = ({ title, content, formBuilder, successMessage }) => (
+  <PageContent>
+    {title && <h1>{title}</h1>}
+    {content && <Content>{content}</Content>}
+    {formBuilder && formBuilder.length && (
+      <QuoteForm fields={formBuilder} successMessage={successMessage} />
+    )}
+  </PageContent>
+);
 
 const Transitioner = ({ transitionStatus, children }) => {
   const transition = useTransition(

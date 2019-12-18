@@ -19,7 +19,6 @@ export const wrapPageElement = ({ element, props }) => {
     props.data.sanityAboutPage ||
     props.data.sanityQuoteForm;
 
-  console.log(props);
   return (
     <Wrapper
       home={props.path === '/'}
