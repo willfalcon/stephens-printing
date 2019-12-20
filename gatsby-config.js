@@ -46,6 +46,16 @@ module.exports = {
         // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
         // dataLayerName: "YOUR_DATA_LAYER_NAME",
       }
+    },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://ea4070df15914b2ba4f1ba8899946eca@sentry.io/1863439',
+        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+        environment: process.env.NODE_ENV,
+        enabled: (() =>
+          ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)()
+      }
     }
   ]
 };
