@@ -101,4 +101,5 @@ const PageContent = styled.div`
   `}
 `;
 
+export { ContentBlock };
 export default Page;
